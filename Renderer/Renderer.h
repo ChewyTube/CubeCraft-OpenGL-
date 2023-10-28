@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "../Shader/Shader.h"
+#include "../enum.h"
 
 namespace cubecraft {
 	class Renderer {
@@ -46,7 +47,6 @@ namespace cubecraft {
 			0, 1, 3, // 第一个三角形
 			1, 2, 3  // 第二个三角形
 		};
-
 		const GLchar* vertexShaderSource = "#version 330 core\n"
 			"layout (location = 0) in vec3 position;\n"
 			"void main()\n"
@@ -59,5 +59,6 @@ namespace cubecraft {
 			"{\n"
 			"color = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
 			"}\n\0";
+		
 	};
 }

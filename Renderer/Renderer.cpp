@@ -53,15 +53,14 @@ namespace cubecraft {
         }
 
         glViewport(0, 0, 800, 600);
-
+        /*
         compileShaders(vertexShader, vertexShaderSource, ShaderType::vertex);
         compileShaders(fragmentShader, fragmentShaderSource, ShaderType::fragment);
         createShaderProgram({vertexShader, fragmentShader});
+        */
+        
         createVAO();
-        shader.compileShaders(shader.readFromFile("../Shader/shader.vert"), ShaderType::vertex);
-        shader.compileShaders(shader.readFromFile("../Shader/shader.frag"), ShaderType::fragment);
-        shader.createShaderProgram();
-
+        shader.readAndCompileShaders("Shader/shader.vert", "Shader/shader.frag");
         glBindVertexArray(VAO);
         createVBO();
         createEBO();
@@ -70,6 +69,10 @@ namespace cubecraft {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindVertexArray(0);
 
+        //shader.compileShaders(shader.readFromFile("Shader/shader.vert"), ShaderType::vertex);
+        //shader.compileShaders(shader.readFromFile("Shader/shader.frag"), ShaderType::fragment);
+        //shader.createShaderProgram();
+        //shader.readAndCompileShader("Shader/shader.vert", "Shader/shader.frag");
 	}
     void Renderer::Loop() {
         //渲染循环
@@ -93,6 +96,9 @@ namespace cubecraft {
         }
     }
 	void Renderer::Quit() {
+        glDeleteVertexArrays(1, &VAO);
+        glDeleteBuffers(1, &VBO);
+        glDeleteBuffers(1, &EBO);
         glfwTerminate();
 	}
 
@@ -112,7 +118,7 @@ namespace cubecraft {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
     }
-
+    /*
     void Renderer::compileShaders(GLuint& shader, const GLchar* shaderSource, ShaderType type) {
         //创建
         switch (type)
@@ -142,6 +148,8 @@ namespace cubecraft {
         }
     }
 
+    */
+    /*
     void Renderer::createShaderProgram(std::vector<GLuint> shaders) {
         shaderProgram = glCreateProgram();
         //绑定
@@ -161,4 +169,5 @@ namespace cubecraft {
             glDeleteShader(shader);
         }
     }
+    */
 }
