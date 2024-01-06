@@ -30,4 +30,16 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\shader.vert" />
+    <None Include="README.md" />
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
+    <None Include="Shader\shader.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Scr\Texture\test.png">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
