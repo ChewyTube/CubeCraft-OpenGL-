@@ -149,6 +149,7 @@
     <None Include="Shader\shader.vert" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Scr\Texture\dirt.png" />
     <Image Include="Scr\Texture\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

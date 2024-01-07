@@ -47,5 +47,8 @@
     <Image Include="Scr\Texture\test.png">
       <Filter>资源文件</Filter>
     </Image>
+    <Image Include="Scr\Texture\dirt.png">
+      <Filter>资源文件</Filter>
+    </Image>
   </ItemGroup>
 </Project>

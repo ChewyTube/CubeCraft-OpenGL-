@@ -1,4 +1,3 @@
-#pragma once
 #ifndef CAMERA_H
 #define CAMERA_H
 
@@ -13,7 +12,9 @@ enum Camera_Movement {
     FORWARD,
     BACKWARD,
     LEFT,
-    RIGHT
+    RIGHT,
+    UP,
+    DOWN
 };
 
 // Default camera values
@@ -72,14 +73,17 @@ public:
     {
         float velocity = MovementSpeed * deltaTime;
         if (direction == FORWARD)
-            Position += Front * velocity;
+            Position += glm::normalize(glm::vec3(Front.x, 0.0f, Front.z)) * velocity;
         if (direction == BACKWARD)
-            Position -= Front * velocity;
+            Position -= glm::normalize(glm::vec3(Front.x, 0.0f, Front.z)) * velocity;
         if (direction == LEFT)
-            Position -= Right * velocity;
+            Position -= glm::normalize(glm::vec3(Right.x, 0.0f, Right.z)) * velocity;
         if (direction == RIGHT)
-            Position += Right * velocity;
-        std::cout << "x=" << Position.x << " y=" << Position.y << " z=" << Position.z << std::endl;
+            Position += glm::normalize(glm::vec3(Right.x, 0.0f, Right.z)) * velocity;
+        if (direction == UP)
+            Position += glm::vec3(0.0f, 1.0f, 0.0f) * velocity;
+        if (direction == DOWN)
+            Position -= glm::vec3(0.0f, 1.0f, 0.0f) * velocity;
     }
 
     // processes input received from a mouse input system. Expects the offset value in both the x and y direction.
