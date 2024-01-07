@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\C++\CubeCraft\Cubecraft\Env\GLAD\include;D:\C++\CubeCraft\Cubecraft\Env\GLFW\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\CubeCraft\Cubecraft\Env\glm;D:\C++\CubeCraft\Cubecraft\Env\GLAD\include;D:\C++\CubeCraft\Cubecraft\Env\GLFW\include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\C++\CubeCraft\Cubecraft\Env\GLFW\lib-vc2022;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -137,7 +137,9 @@
     <ClCompile Include="Shader\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Shader\Shader.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />
