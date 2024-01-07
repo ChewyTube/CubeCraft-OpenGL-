@@ -1,5 +1,5 @@
 #pragma once
-#include <glad/glad.h>; // 包含glad来获取所有的必须OpenGL头文件
+#include <glad/glad.h>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

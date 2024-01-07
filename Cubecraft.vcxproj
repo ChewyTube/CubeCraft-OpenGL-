@@ -132,12 +132,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CubeCraft\CubeCraft.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shader\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CubeCraft\Application.h" />
+    <ClInclude Include="CubeCraft\CubeCraft.h" />
     <ClInclude Include="Shader\Shader.h" />
     <ClInclude Include="stb_image.h" />
   </ItemGroup>
